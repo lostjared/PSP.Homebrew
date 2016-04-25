@@ -38,7 +38,7 @@ QQQQQQQQQQQQQQQQWQQQQQQQQQQQQQQa,_w_a<Qg,-"<yQm, _c_=jQw,_w_a_
 [____________________________________________________________]
  
 	Not ALL psp projects are in the repository.
-	Broken up into two sections Librarys and apps.
+	Broken up into two sections Libraries and apps.
 	All the apps in the app folder as of now,  require
 	SDL_mxf. So be sure to compile SDL_mxf (found in the libs folder)
 
