@@ -1,4 +1,5 @@
-
+haha this was written when a long time ago. the pixelbuffer.c makes no sense
+with the unneeded casts (I thought I was being clever).
 
 |--=]QQQQQQQQQQQQQQQQQQQVTQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
 Q. ]QQQQQQQQQQQQQQQQQQQQ. mQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
@@ -41,6 +42,7 @@ QQQQQQQQQQQQQQQQWQQQQQQQQQQQQQQa,_w_a<Qg,-"<yQm, _c_=jQw,_w_a_
 Purpose:
 	Library for rendering small font files in a simple way that can be created with a editor
 	also contains Pixel access level functions that may come in handy for other operations.
+
 
 
 
