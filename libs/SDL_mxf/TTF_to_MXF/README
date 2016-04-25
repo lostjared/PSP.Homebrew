@@ -1,0 +1,4 @@
+This tool will generate proper MXF files form TTF files.
+The way I did it back in 2006-2007 was incorrect and that is why
+the fonts looked wrong. This creates the correct file.
+

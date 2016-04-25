@@ -1,0 +1,5 @@
+all:
+	x86_64-w64-mingw32-g++  mxfont_fix.cc -c `$(MINGW_PATH)/bin/sdl-config --cflags` -O2
+	x86_64-w64-mingw32-g++ -static $(MINGW_PATH)/mingw/lib/libstdc++.a mxfont_fix.o -o mxfont_fix.exe  $(MINGW_PATH)/lib/libSDL_ttf.a $(MINGW_PATH)/lib/libfreetype.a `$(MINGW_PATH)/bin/sdl-config  --static-libs`  
+	x86_64-w64-mingw32-strip mxfont_fix.exe
+	
