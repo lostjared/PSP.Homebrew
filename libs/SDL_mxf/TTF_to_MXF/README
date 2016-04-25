@@ -1,4 +1,4 @@
-This tool will generate proper MXF files form TTF files.
-The way I did it back in 2006-2007 was incorrect and that is why
-the fonts looked wrong. This creates the correct file.
-
+This will generate proper MXF files from TTF files
+the original editor was flawed and produced bad files.
+To use the default Makefile you must edit it and set LIB_PATH where you compiled
+libsdl, libsdl-ttf, zlib, freetype2, libbz2

@@ -1,3 +1,5 @@
+LIB_PATH=/opt/local
+
 all:
-	g++ `/opt/local/bin/sdl-config --cflags` mxfont_fix.cc -c
-	g++ mxfont_fix.o -o mxfont_fix `/opt/local/bin/sdl-config --static-libs` /opt/local/lib/libSDL_ttf.a /opt/local/lib/libfreetype.a /opt/local/lib/libz.a  /opt/local/lib/libbz2.a 
+	g++ `$(LIB_PATH)/bin/sdl-config --cflags` mxfont_fix.cc -c
+	g++ mxfont_fix.o -o mxfont_fix `$(LIB_PATH)/bin/sdl-config --static-libs` $(LIB_PATH)/lib/libSDL_ttf.a $(LIB_PATH)/lib/libfreetype.a $(LIB_PATH)/lib/libz.a  $(LIB_PATH)/lib/libbz2.a 
