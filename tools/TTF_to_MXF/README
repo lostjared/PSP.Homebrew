@@ -1,0 +1,4 @@
+This will generate proper MXF files from TTF files
+the original editor was flawed and produced bad files.
+To use the default Makefile you must edit it and set LIB_PATH where you compiled
+libsdl, libsdl-ttf, zlib, freetype2, libbz2
