@@ -1,0 +1,12 @@
+This is a game in progress. What I want it to 
+be:
+
+a multiplayer game where 2 players could play 
+each  other via wifi on the PSP.
+
+Also play agianst the computer.
+
+Right now there is only two player mode
+and no PSP  make file only regular SDL  makefile
+-jared
+

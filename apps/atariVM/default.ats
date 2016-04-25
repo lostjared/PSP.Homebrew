@@ -1,0 +1,100 @@
+STA $1FE11
+STY $1FE12
+INT #$13
+LDA #$25
+STA $1FE25
+LDA #255
+STA $FFE13
+LDA #0
+STA $FFE14
+LDA #$FF
+STA $1299
+GAME
+LDA $1FE11
+LDY $1FE12
+INT #$56
+LDA $FFE19
+STA $FFE17
+LDX #$FF
+STX $FFE15
+JSR DRAWSCREEN
+INT #$15
+; test if escape key was pressed
+LDY #$1B
+INT #$19
+CPY #0
+BNE END
+
+
+
+; fill the screen with black
+LDX #0
+INT #$57
+
+JMP GAME ; loop back up to the start of the game loop
+END BRK
+
+; draw rectangle subroutine
+
+DRAWRECT ; takes X,Y, and accumulator 
+; ------------------------------------------------------------------
+STA $1FE15
+STX $1FE11
+STY $1FE1
+LDA $1FE25
+ADC #5
+STA $1FE25
+MAJOR
+LDY $1FE1
+MINI 
+LDA $1FE25
+INT #$16
+INY
+LDA $1FE1
+ADC #16
+STA $1FE15
+CPY $1FE15
+BNE MINI
+INX
+LDA $1FE11
+ADC #32
+STA $1FE2
+CPX $1FE2
+BNE MAJOR
+RTS
+
+; draw of the screen subroutine
+
+DRAWSCREEN
+INT #$14
+LDX #5
+LDY #5
+STX $1FE18
+STY $1FE19
+
+BIGLOOP
+LOOP
+LDA #$FF
+LDX $1FE18
+LDY $1FE19
+JSR DRAWRECT
+LDA $1FE18
+ADC #36
+STA $1FE18
+CMP #0
+BNE LOOP
+LDX #5
+STX $1FE18
+LDA $1FE19
+ADC #20
+STA $1FE19
+CMP #0
+BNE BIGLOOP
+RTS
+
+; Add to Score subroutine
+ADDSCORE
+LDA $FFE19
+ADC #1
+STA $FFE19
+RTS

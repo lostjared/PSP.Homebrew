@@ -1,0 +1,57 @@
+|--=]QQQQQQQQQQQQQQQQQQQVTQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+Q. ]QQQQQQQQQQQQQQQQQQQQ. mQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+Q. ]QQQQQQV??9QQQ@T??9QT` ?TQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+Q. ]QQQQQ( jw "Q@`_gg,dw  awQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+Q. ]QQQQF .QQ; ]k +$QgmQ. mQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+Q. ]QQQQ[ :QQ; ]m   -?QQ. mQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+Q. ]QQQW[ :QQ; ]Wgs.  3Q. mQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+Q. ]QQQ:h  QQ` jE4WQ; jQ. m@$WQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+!  -""":QL.?! jQk ??`_QQc ?'dQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+QmQQQQmQQQQwwmQWQmgygQQQQgwmQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+QQQQQQQQQQQQQQQQQQ!.aa,-4QB  dQQQQQc )WQQQQQQQQWQQQWQQQWQQQWQQ
+QQQQQQQQQQQQQQQQQF jWWQ/jQQa<QQQQQQf )WQQQQQQQQQQQQQQQQQQQQQQQ
+QQQQQQQQQQQQQQQQQf )WQQmmQ???$QW!-"t )WQ@?"!4QQQQQQQQQQQQQQQQQ
+QQQQQQQQQQQQQQQQQL   "Y$QQm; dQ[ <g, )W@`.mc ]QQQQQQQQQQQQQQQQ
+QQQQQQQQQQQQQQQQQQ,     4QQ; dW  jQL )W[ =Qk -QQQQQQQQQQQQQQQQ
+QQQQQQQQQQQQQQQQQQQma,  =QQ; dW  3Qk )W[ -""  WWQQQQQQWQQQWQQQ
+QQQQQQQQQQQQQQQQQ@4QQQm .QQ; dQ  3Qf )W[ =QQQWWQQQQQQQQQQQQQQQ
+QQQQQQQQQQQQQQQQWk-QWQW <QQ; dQc ]Q[ )Wk -QWE:QQQQQQQQQQQQQQQQ
+QQQQQQQQQQQQQQQQQm,-!!`_mQc__|QQ,_=c__]Qa "!=yQQQQQQQQQQQQQQQQ
+QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQW""!QQQQQQQQQQQQQQQQQQQQW"""Q
+QQQQQQQQQQQQQQQQQWQQQQQQQQQQQQQQQQE .QQQQQQQQQQQQQQQQQQQQQm  Q
+QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQE :QQQQQQQQQQQQQQQQQQQWQW  Q
+QQQQQQQQQQQQQQQQQQQQQQQQWQQQQQW"  ! :QQ@!^^?QW@"++"4QQQ!  ?  Q
+QQQQQQQQQQQQQQQQWQQQQQQQQQQQQQ[ =Qc .QW' mk )WE<QQ; $Qf _QL  Q
+QQQQQQQQQQQQQQQQQQQQQQQWQQQQQQ` ]Qk :QF .Qm  $WWBH[ ]Q' ]Wm  Q
+QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ. jQE :Qf  |+..dD`.a, ]Q; ]WW  Q
+QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ; ]QE .QL  QQQQQ[ jW[ ]Q( ]WB  Q
+QQQQQQQQQQQQQQQQQQQQQWQQQQQQQQL +W[ :QQ. $Q@.Q[ ]B' ]Qk -Wf  Q
+QQQQQQQQQQQQQQQQWQQQQQQQQQQQQQQa,_w_a<Qg,-"<yQm, _c_=jQw,_w_a_
+[                                                            ]
+[                                                            ]
+[                                                            ]
+[   Library Title:  libmxpsp-1.0                             ]
+[                                                            ]
+[   svn co svn://lostsidedead.com/psp/trunk/libmxpsp         ]
+[                                                            ]
+[____________________________________________________________]
+
+
+
+first:
+
+$ make -f Makefile.gen
+
+than once that finishes
+
+
+$ LDFLAGS="-L$(psp-config --psp-prefix)/sdk/lib -lc -lpspuser" \
+ ./configure --host psp --prefix=$(psp-config --psp-prefix)
+
+
+then
+
+$ make install
+
+when using the library you must link to all the librarys libmxpsp does.
+ 

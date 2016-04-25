@@ -1,0 +1,41 @@
+PREFIX = /usr/local/openxdk
+
+CC   = i386-pc-xbox-gcc
+CPP  = i386-pc-xbox-g++
+CXBE = cxbe
+
+SDLFLAGS  = -DENABLE_XBOX -DDISABLE_CDROM 
+CC_FLAGS  = -c -g -std=gnu99 -ffreestanding -nostdlib -fno-builtin -fno-exceptions -mno-cygwin -march=i386 $(SDLFLAGS) 
+CPP_FLAGS = -c -g                           -nostdlib -fno-builtin -fno-exceptions -mno-cygwin -march=i386 $(SDLFLAGS)
+INCLUDE   = -I$(PREFIX)/i386-pc-xbox/include -I$(PREFIX)/include -I$(PREFIX)/include/SDL
+
+CLINK = -nostdlib
+ALIGN = -Wl,--file-alignment,0x20 -Wl,--section-alignment,0x20 
+SHARED = -shared
+ENTRYPOINT = -Wl,--entry,_WinMainCRTStartup 
+STRIP = -Wl,--strip-all
+LD_FLAGS = $(CLINK) $(ALIGN) $(SHARED) $(ENTRYPOINT) $(STRIP)
+LD_DIRS = -L$(PREFIX)/i386-pc-xbox/lib -L$(PREFIX)/lib 
+LD_LIBS  = $(LD_DIRS) -lSDL -lopenxdk -lhal -lc -lhal -lusb -lc -lxboxkrnl -lm
+
+.c.o:
+	$(CC) -c $< $(CC_FLAGS) $(INCLUDE)
+
+.cpp.o:
+	$(CPP) -c $< $(CPP_FLAGS) $(INCLUDE)
+
+echop:
+	echo "#define FOR_XBOX_OPENXDK" > platform.h
+
+xbox: clean echop mpx2.exe
+	
+
+mpx2.exe: pixelbuffer.o mxfont.o mpgame.o mpx2.o start.o 
+	$(CC) -o $@ pixelbuffer.o mxfont.o mpgame.o mpx2.o start.o $(LD_LIBS) $(LD_FLAGS)
+	$(CXBE) -TITLE:'$@' -DUMPINFO:"mpx2.cxbe" -OUT:"mpx2.xbe" $@ > /dev/null
+	cp mpx2.xbe ./MasterPieceX2/mpx2.xbe
+	cp mpx2.xbe ./TuxBlocks/tuxblocks.xbe
+	cp mpx2.xbe ./NeoBlocks/neoblocks.xbe
+clean:
+	rm -f *.o
+

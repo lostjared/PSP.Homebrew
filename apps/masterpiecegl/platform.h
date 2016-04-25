@@ -1,0 +1,3 @@
+#define FOR_PSP
+
+

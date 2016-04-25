@@ -1,0 +1,9 @@
+
+all:
+	i586-mingw32msvc-g++ -I./mx -I/usr/local/i586-mingw32/include main.cpp -c
+	i586-mingw32msvc-g++ -I./mx -I/usr/local/i586-mingw32/include mxclamp.cpp -c
+	i586-mingw32msvc-g++ -I./mx -I/usr/local/i586-mingw32/include args.cpp -c
+	i586-mingw32msvc-g++ main.o args.o mxclamp.o -L/usr/local/i586-mingw32/lib -lz -o mxclamp.exe 
+
+clean:
+	rm -rf *.o *~ *.exe

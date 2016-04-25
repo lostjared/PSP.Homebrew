@@ -1,0 +1,25 @@
+TARGET = SuperMasterX
+OBJS = game.o level.o interface.o
+CFLAGS = 
+CXXFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
+ASFLAGS = $(CFLAGS)
+PSPBIN = $(PSPSDK)/../bin
+CFLAGS += `$(PSPBIN)/sdl-config --cflags`
+LIBS += -lmxf -lSDL_mixer  `$(PSPBIN)/sdl-config --libs` -lpsppower -lstdc++ /usr/local/pspdev/psp/lib/libvorbisidec.a  /usr/local/pspdev/psp/lib/libogg.a 
+EXTRA_TARGETS = EBOOT.PBP
+PSP_EBOOT_TITLE = SuperMasterX
+PSP_EBOOT_ICON=granny.png
+PSP_EBOOT_PIC1=title.png
+PSPSDK=$(shell psp-config --pspsdk-path)
+include $(PSPSDK)/lib/build.mak
+
+first:
+	echo "#define FOR_PSP" > platform.h
+last:
+	echo "" > platform.h
+
+psp: first all kxploit last
+
+install:
+	cp ./SuperMasterX/EBOOT.PBP /cygdrive/p/PSP/GAME/SuperMasterX/EBOOT.PBP
+	

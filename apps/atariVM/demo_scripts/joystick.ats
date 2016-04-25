@@ -1,0 +1,37 @@
+*= $1000
+ ; initilization of screen
+INT #$13
+LDA #$FF
+GAME
+
+LDX #0
+LDY #0
+JSR DRAWRECT
+
+INT #$15
+
+INT #$14
+LDY #0
+INT #$19
+CPY #0
+BNE OVER
+JMP GAME
+OVER
+ADC #1
+JMP GAME
+
+DRAWRECT ; takes X,Y, and accumulator
+MAJOR
+LDY #0
+MINI 
+; INT #$17
+INT #$16
+INY
+CPY #$25
+BNE MINI
+INX
+CPX #$25
+BNE MAJOR
+RTS
+
+

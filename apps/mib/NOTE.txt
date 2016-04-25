@@ -1,0 +1,8 @@
+Note: I had a modified version of this programs source for 
+which I made the psp build, .. this code has since been 
+deleted so eventully ill get around to modifiying this
+versions code and add a make file for  PSP. sorry for the
+inconvience.
+
+ -jared
+
