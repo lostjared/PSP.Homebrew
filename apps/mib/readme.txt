@@ -94,15 +94,3 @@ inline void input_down(int d) {
 			break;
 		}
 }
-
-Someone said:
-
-11.  » nsjkhwjihiwhui
-
-this is piss - there is no pattern. press select a few times watch the right symbol change. its random. GAY.
-
-/rant
-
-I say
-
-1 & 1 & 1 = 3
